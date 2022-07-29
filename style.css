@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:ital,wght@0,100;0,400;0,600;1,400&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.topo{
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 1px 1px 10px #00000067;
+}
+
+.topo img{
+    width: 100px;
+    cursor: pointer;
+    transition: ease-in 200ms;
+}
+
+.topo img:hover{
+    transform: translateY(-2px);
+    box-shadow: 1px 1px 10px #0000006b;
+}
+
+.topo ul > li{
+    list-style: none;
+    display: inline-block;
+}
+
+.topo li{
+    color: rgb(31, 153, 147);
+    text-align: center;
+    text-decoration: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: ease-in 200ms;
+}
+
+.topo li:hover{
+    color: rgb(21, 100, 96);
+}
+
+.topo a{
+    text-decoration: none;
+    color: rgb(31, 153, 147);
+}
