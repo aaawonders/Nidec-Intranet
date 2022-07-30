@@ -1,20 +1,35 @@
 //Abrir painel de login
-
 var FormLogin = document.getElementsByClassName("floatform");
 var FormLoginPopup = document.getElementsByClassName("popup");
 var LoginBotao = document.getElementById("loginButton");
 var LoginBotaoFechar = document.getElementById("CloseButtonForm");
+var LoginAtivado = document.querySelectorAll('.floatform.ativado');
 
 LoginBotao.addEventListener('click', function() {
     FormLoginPopup[0].classList.add("ativado");
     FormLogin[0].classList.add("ativado");
 }) 
 
-LoginBotaoFechar.addEventListener('click', function() {
-    FormLoginPopup[0].classList.remove("ativado");
+// Abrir Painel de Criar Conta
+
+var FormLoginCriar = document.getElementsByClassName("floatformCreate");
+var CriarLoginBotao = document.getElementById("CriarLogin");
+var LoginCriarAtivado = document.querySelectorAll('.floatformCreate.ativado');
+
+CriarLoginBotao.addEventListener('click', function() {
     FormLogin[0].classList.remove("ativado");
+    FormLoginCriar[0].classList.add("ativado");
 }) 
 
+LoginBotaoFechar.addEventListener('click', () => {
+    FormLoginPopup[0].classList.remove("ativado");
+    if (LoginAtivado.length > 0) {
+        FormLogin[0].classList.remove("ativado");
+    } else if (LoginCriarAtivado.length > 0) {
+        FormLoginCriar[0].classList.remove("ativado");
+    }
+
+}) 
 
 //validar Senhas com estilo
 

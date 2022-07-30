@@ -1,10 +1,29 @@
+<?php 
+include_once ('./src/MySQLInteract.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['CriarNome']) && isset($_POST['CriarSobrenome']) && isset($_POST['CriarEmail']) 
+    && isset($_POST['CriarSenha'])){
+        $CriarNome = $_POST['CriarNome'];
+        $CriarSobrenome = $_POST['CriarSobrenome'];
+        $CriarEmail = $_POST['CriarEmail'];
+        $CriarSenha = $_POST['CriarSenha'];
+
+        SQLadd(1, $CriarNome, $CriarSobrenome, $CriarEmail, $CriarSenha, $conn);
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/ico">
+    <title>Nidec GA - Início</title>
     <style><?php include ("C:/xampp/htdocs/nidec/style.css"); ?></style>
 </head>
 <body>
@@ -16,15 +35,18 @@
             <li><a href="#">Reportar</a></li>
     </ul>
 
-    <button id="loginButton">Login</button>
+    <div class="FazerLogin">
+        <img src="assets/svg/person-plus.svg" alt="">
+        <button id="loginButton">Login</button>
+    </div>
 </header>
 
 <div class="popup">
-<!-- <div class="floatform">
+<div class="floatform">
     <a href="" id="CloseButtonForm">X</a>
         <form action="" method="post">
-            <label for="">Nome de usuário</label>
-            <input type="text" name="username" id="">
+            <label for="">E-Mail</label>
+            <input type="email" name="username" id="">
 
             <label for="">Senha</label>
             <input type="password" name="senha" id="">
@@ -37,34 +59,30 @@
             <input type="submit" value="Ir" class="SubmitButton">
 
             <div class="LinksLogin">
-                <button id="CriarLogin">Criar uma conta</button>
+                <button type="button" id="CriarLogin">Criar uma conta</button>
                 <a href="">Esqueci a senha</a>
             </div>
         </form>
-    </div> -->
+    </div>
     
     <div class="floatformCreate">
     <a href="" id="CloseButtonForm">X</a>
         <form action="" method="post">
             <label for="">Nome</label>
-            <input type="text" name="nome" id="">
+            <input type="text" name="CriarNome" id="">
 
             <label for="">Sobrenome</label>
-            <input type="text" name="sobrenome" id="">
-
-            <label for="">Nome de Usuário</label>
-            <input type="text" name="username" id="">
-
+            <input type="text" name="CriarSobrenome" id="">
 
             <label for="">Email</label>
-            <input type="email" name="email" id="">
+            <input type="email" name="CriarEmail" id="">
 
             <label for="">Senha</label>
-            <input type="password" name="senha" id="PSW">
+            <input type="password" name="CriarSenha" id="PSW">
 
             <div id="ValSenha">
                 <div class="QuantChar">
-                    <p>mais de 8 digitos</p>
+                    <p>Mais de 8 digitos</p>
                 </div>
 
                 <div class="LetraChar">
@@ -91,9 +109,8 @@
     </div>
 
 </div>
-
-
 </div>
+
 </body>
 
 <script src="script.js"></script>

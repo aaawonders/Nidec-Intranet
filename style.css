@@ -70,6 +70,32 @@ body{
 
 /* Criação */
 
+.FazerLogin{
+    padding: 2px;
+}
+
+
+.FazerLogin > img{
+    width: 2.5rem;
+}
+
+.FazerLogin > img:hover{
+    width: 2.5rem;
+}
+
+#loginButton{
+    opacity: 1;
+    position: relative;
+    top: -15px;
+    left: -45px;
+    text-decoration: none;
+    color: #1f9993;
+    background: none;
+    border: none;
+    padding: 8px 6px;
+    cursor: pointer;
+}
+
 .floatform.off{
     opacity: 0;
     display: none;
@@ -121,6 +147,7 @@ body{
     margin-bottom: 20px;
     padding: 5px;
     font-size: 15px;
+    color: #00973f;
 }
 
 .floatform form label{
@@ -150,14 +177,15 @@ body{
 
 .floatformCreate{
     position: absolute;
-    top: 50%;
+    top: -125%;
+    opacity: 0;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1.25);
     background-color: white;
     margin: 0 auto;
     width: 30%;
     border-radius: 15px;
-    padding: 70px;
+    padding: 50px;
     box-shadow: 1px 1px 10px #00000031;
     transform: translate(-50%, -50%);
 }
@@ -176,6 +204,7 @@ body{
 }
 
 .floatformCreate form input{
+    color: #00973f;
     margin-bottom: 20px;
     padding: 5px;
     font-size: 15px;
