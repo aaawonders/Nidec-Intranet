@@ -2,6 +2,7 @@
 
 
 $a:rgb(0, 94, 73);
+$CorFonte: rgb(31, 153, 147);
 
 *{
     margin: 0;
@@ -73,29 +74,27 @@ body{
 
 /* Criação */
 
-.FazerLogin{
-    padding: 2px;
-}
+// .FazerLogin{
+//     padding: 2px;
+// }
 
 
-.FazerLogin > img{
+.FazerLogin > button img{
     width: 2.5rem;
 }
 
-.FazerLogin > img:hover{
+.FazerLogin > button img:hover{
     width: 2.5rem;
 }
 
 #loginButton{
     opacity: 1;
-    position: relative;
-    top: -15px;
-    left: -45px;
+    // position: relative;
     text-decoration: none;
     color: #1f9993;
     background: none;
     border: none;
-    padding: 8px 6px;
+    padding: 0px 6px;
     cursor: pointer;
 }
 
@@ -311,3 +310,149 @@ body{
 .CharNPassou{
     color: #7a0029;
 }
+
+.LoginDropBox{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: rgb(255, 237, 187);
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: -20px;
+    box-shadow: 1px 1px 10px #00000067;
+    transition: ease-in-out 200ms;
+}
+
+.Perfil{
+    display: none;
+    position: relative;
+    flex-direction: column;
+    width: 10%;
+    align-content: center;
+    cursor: pointer;
+}
+
+.Perfil > p{
+    color: $CorFonte;
+    background-color: red;
+}
+
+.Perfil > p .User{
+    font-weight: bold;
+}
+
+.Perfil p:hover~.LoginDropBox, .LoginDropBox:hover{
+
+        display: flex !important;
+}
+
+.Perfil .LoginDropBox:hover~p:hover{
+
+    display: flex !important;
+}
+
+.LoginDropBox:hover{
+    top: 22px;
+}
+
+.Line{
+    margin: 0 auto;
+    display: block;
+    background-color: rgba(75, 75, 75, 0.281);
+    height: 1px;
+    width: 100px;
+}
+
+.Perfil > p::after{
+    content: "▼";
+}
+
+.Perfil > p:hover::after{
+    content: "▲";
+}
+
+.LoginDropBox:hover~.Perfil > p::after{
+    content: "▲" !important;
+}
+
+.LoginDropBox > ul li{
+    list-style: none;
+    text-decoration: none;
+    color: rgb(65, 65, 65);
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.LoginDropBox > ul li:hover{
+    text-decoration: none;
+    color: rgb(49, 49, 49);
+    background-color: rgb(255, 231, 163);
+}
+
+.LoginDropBox > ul li a{
+    display: inline-block;
+    width: 100%;
+    height: 10%;
+}
+
+.MainBody .header{
+    color: white;
+    background-color: #ca0d00;
+    grid-area: header;
+    display: flex;
+    align-items: center;
+}
+
+.MainBody .sidebar{
+    color: white;
+    background-color: #005eca;
+    grid-area: sidebar;
+}
+
+.MainBody .main{
+    color: white;
+    background-color: #643bd3;
+    grid-area: main;
+}
+
+.MainBody .footer{
+    color: rgb(0, 0, 0);
+    background-color: #21c500;
+    grid-area: footer;
+}
+
+.MainBody{
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100vh;
+    display: grid;
+}
+
+.MainBody .GridContainer{
+    display: grid;
+    grid-template-columns:0.5fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto 0.025fr;
+    grid-template-areas: 
+    "header header header header"
+    "sidebar main main main"
+    "sidebar main main main"
+    "sidebar main main main"
+    "sidebar main main main"
+    "sidebar footer footer footer"
+    ;
+}
+
+.Slide{
+    color: black;
+    background-color: yellow;
+    width: 75%;
+    height: 60vh;
+    margin: auto auto;
+    border-radius: 20px;
+}
+

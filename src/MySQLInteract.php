@@ -45,11 +45,11 @@ function SQLLogin($LoginEmail, $LoginSenha, $conn){
         $_SESSION['Nome'] = $LoginPass['Nome'];
         $_SESSION['Sobrenome'] = $LoginPass['Sobrenome'];
 
-        Header('Location: src/login.php');
+        // Header('Location: src/login.php');
         
     } else {
+        global $ErroLogin;
         $ErroLogin = "Erro ao conectar, Email ou Senha incorretos!";
-        echo $ErroLogin;
     }
 
 }

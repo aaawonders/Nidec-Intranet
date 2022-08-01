@@ -1,3 +1,11 @@
+var BotaoIr = document.getElementsByClassName('SubmitButton'); 
+
+
+// if ( window.history.replaceState ) {
+//     window.history.replaceState( null, null, window.location.href );
+// }
+
+
 //Abrir painel de login
 var FormLogin = document.getElementsByClassName("floatform");
 var FormLoginPopup = document.getElementsByClassName("popup");
@@ -5,7 +13,7 @@ var LoginBotao = document.getElementById("loginButton");
 var LoginBotaoFechar = document.getElementById("CloseButtonForm");
 var LoginAtivado = document.querySelectorAll('.floatform.ativado');
 
-LoginBotao.addEventListener('click', function() {
+LoginBotao.addEventListener('click', function PopUPLogin() {
     FormLoginPopup[0].classList.add("ativado");
     FormLogin[0].classList.add("ativado");
 }) 

@@ -4,9 +4,11 @@ if(!isset($_SESSION)){
     session_start();
 }
 
+require_once ('./index.php');
+
 $NomeLog = $_SESSION['Nome'];
 $SobrenomeLog = $_SESSION['Sobrenome'];
 
-echo "<p>Seja Bem-vindo ".$NomeLog." ".$SobrenomeLog."!</p>";
-
+header ('Location: ./index.php');
+exit();
 ?>
