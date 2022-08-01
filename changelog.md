@@ -7,7 +7,8 @@
 # Quarto Update - **0.0.4** / 30/07/2022
 ____________________________________________
 
-- Adicionado ligação entre MySQL e criação de login.
+- Criação de conta e início de sessão funcionando. 
+- Adicionado ligação entre MySQL e Login e criação de login.
 - Finalizado pop-up para Login de usuário e criação de usuário.
 
 
