@@ -7,9 +7,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $CriarNome = $_POST['CriarNome'];
         $CriarSobrenome = $_POST['CriarSobrenome'];
         $CriarEmail = $_POST['CriarEmail'];
-        $CriarSenha = $_POST['CriarSenha'];
+        $CriarSenha = password_hash($_POST['CriarSenha'], PASSWORD_DEFAULT);
 
         SQLadd(1, $CriarNome, $CriarSobrenome, $CriarEmail, $CriarSenha, $conn);
+    }
+
+    if (isset($_POST['LoginEmail']) || isset($_POST['LoginSenha'])){
+
+        $EmailPass = mysqli_real_escape_string($conn, $_POST['LoginEmail']);
+        $SenhaPass = mysqli_real_escape_string($conn, $_POST['LoginSenha']);
+
+        SQLLogin($EmailPass, $SenhaPass, $conn);
+
     }
 }
 ?>
@@ -46,10 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <a href="" id="CloseButtonForm">X</a>
         <form action="" method="post">
             <label for="">E-Mail</label>
-            <input type="email" name="username" id="">
+            <input type="email" name="LoginEmail" id="">
 
             <label for="">Senha</label>
-            <input type="password" name="senha" id="">
+            <input type="password" name="LoginSenha" id="">
 
             <div class="lembrar">
                 <label for="">Lembrar login</label>

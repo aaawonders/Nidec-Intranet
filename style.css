@@ -1,310 +1,301 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:ital,wght@0,100;0,400;0,600;1,400&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:ital,wght@0,100;0,400;0,600;1,400&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    background: #ffffff;
-    color: #000000;
-    font-family: 'Poppins', sans-serif;
+body {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
 }
 
-.topo{
-    background-color: rgb(255, 255, 255);
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 20px;
-    box-shadow: 1px 1px 10px #00000067;
+.topo {
+  background-color: rgb(255, 255, 255);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4039215686);
 }
 
-.topo img{
-    width: 100px;
-    cursor: pointer;
-    transition: ease-in 200ms;
+.topo img {
+  width: 100px;
+  cursor: pointer;
+  transition: ease-in 200ms;
 }
 
-.topo img:hover{
-    transform: translateY(-2px);
-    width: 105px;
+.topo img:hover {
+  transform: translateY(-2px);
+  width: 105px;
 }
 
-.topo ul > li{
-    list-style: none;
-    display: inline-block;
+.topo ul > li {
+  list-style: none;
+  display: inline-block;
 }
 
-.topo li{
-    color: rgb(31, 153, 147);
-    text-align: center;
-    text-decoration: none;
-    padding: 0 20px;
-    cursor: pointer;
-    transition: ease-in 200ms;
+.topo li {
+  color: rgb(31, 153, 147);
+  text-align: center;
+  text-decoration: none;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: ease-in 200ms;
 }
 
-.topo li:hover{
-    color: rgb(21, 100, 96);
+.topo li:hover {
+  color: rgb(21, 100, 96);
 }
 
-.topo ul li a{
-    display: inline-block;
-    width: 100%;
-    height: 100%;
- }
+.topo ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
 
-.topo a{
-    text-decoration: none;
-    color: rgb(31, 153, 147);
+.topo a {
+  text-decoration: none;
+  color: rgb(31, 153, 147);
 }
 
 /* Formulário */
-
-
 /* Criação */
-
-.FazerLogin{
-    padding: 2px;
+.FazerLogin {
+  padding: 2px;
 }
 
-
-.FazerLogin > img{
-    width: 2.5rem;
+.FazerLogin > img {
+  width: 2.5rem;
 }
 
-.FazerLogin > img:hover{
-    width: 2.5rem;
+.FazerLogin > img:hover {
+  width: 2.5rem;
 }
 
-#loginButton{
-    opacity: 1;
-    position: relative;
-    top: -15px;
-    left: -45px;
-    text-decoration: none;
-    color: #1f9993;
-    background: none;
-    border: none;
-    padding: 8px 6px;
-    cursor: pointer;
+#loginButton {
+  opacity: 1;
+  position: relative;
+  top: -15px;
+  left: -45px;
+  text-decoration: none;
+  color: #1f9993;
+  background: none;
+  border: none;
+  padding: 8px 6px;
+  cursor: pointer;
 }
 
-.floatform.off{
-    opacity: 0;
-    display: none;
+.floatform.off {
+  opacity: 0;
+  display: none;
 }
 
-
-.popup.ativado{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #0000000e;
-    backdrop-filter: blur(5px);
+.popup.ativado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.0549019608);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
-.floatform{
-    position: absolute;
-    top: -150%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.25);
-    left: 50%;
-    background-color: white;
-    margin: 0 auto;
-    width: 30%;
-    border-radius: 15px;
-    padding: 70px;
-    box-shadow: 1px 1px 10px #00000031;
-    transform: translate(-50%, -50%);
-    transition: top 0ms ease-in-out 200ms,
-                opacity 200ms ease-in-out 0ms,
-                transform 20ms ease-in-out 0ms;
+.floatform {
+  position: absolute;
+  top: -150%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.25);
+  left: 50%;
+  background-color: white;
+  margin: 0 auto;
+  width: 30%;
+  border-radius: 15px;
+  padding: 70px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1921568627);
+  transform: translate(-50%, -50%);
+  transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms;
 }
 
-.floatform.ativado{
-    opacity: 1 !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) scale(1);
+.floatform.ativado {
+  opacity: 1 !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) scale(1);
 }
 
-.floatform form{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
+.floatform form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.floatform form input{
-    margin-bottom: 20px;
-    padding: 5px;
-    font-size: 15px;
-    color: #00973f;
+.floatform form input {
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 15px;
+  color: #00973f;
 }
 
-.floatform form label{
-    margin-bottom: 20px;
-    font-size: 18px;
+.floatform form label {
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
-.floatform form .SubmitButton{
-    background-color: #2b2b2b;
-    color: #ffffff;
-    font-size: 18px;
-    margin: 0 auto;
-    margin-top: 5px;
-    padding: 8px;
-    width: 50%;
-    cursor: pointer;
-    border-style: none;
-    border-radius: 10px;
-    transition: ease-in-out 200ms;
+.floatform form .SubmitButton {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding: 8px;
+  width: 50%;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 10px;
+  transition: ease-in-out 200ms;
 }
 
-.floatform form .SubmitButton:hover{
-    background-color: #424242;
-    transform: translateY(-2px);
-    box-shadow: 1px 1px 10px #00000052;
+.floatform form .SubmitButton:hover {
+  background-color: #424242;
+  transform: translateY(-2px);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3215686275);
 }
 
-.floatformCreate{
-    position: absolute;
-    top: -125%;
-    opacity: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.25);
-    background-color: white;
-    margin: 0 auto;
-    width: 30%;
-    border-radius: 15px;
-    padding: 50px;
-    box-shadow: 1px 1px 10px #00000031;
-    transform: translate(-50%, -50%);
+.floatformCreate {
+  position: absolute;
+  top: -125%;
+  opacity: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.25);
+  background-color: white;
+  margin: 0 auto;
+  width: 30%;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1921568627);
+  transform: translate(-50%, -50%);
 }
 
-.floatformCreate.ativado{
-    opacity: 1 !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) scale(1);
+.floatformCreate.ativado {
+  opacity: 1 !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) scale(1);
 }
 
-.floatformCreate form{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
+.floatformCreate form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.floatformCreate form input{
-    color: #00973f;
-    margin-bottom: 20px;
-    padding: 5px;
-    font-size: 15px;
+.floatformCreate form input {
+  color: #00973f;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 15px;
 }
 
-.floatformCreate form label{
-    margin-bottom: 9px;
-    font-size: 15px;
+.floatformCreate form label {
+  margin-bottom: 9px;
+  font-size: 15px;
 }
 
-.floatformCreate form .SubmitButton{
-    background-color: #2b2b2b;
-    color: #ffffff;
-    font-size: 18px;
-    margin: 0 auto;
-    margin-top: 5px;
-    padding: 8px;
-    width: 50%;
-    cursor: pointer;
-    border-style: none;
-    border-radius: 10px;
-    transition: ease-in-out 200ms;
+.floatformCreate form .SubmitButton {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding: 8px;
+  width: 50%;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 10px;
+  transition: ease-in-out 200ms;
 }
 
-.floatformCreate form .SubmitButton:hover{
-    background-color: #424242;
-    transform: translateY(-2px);
-    box-shadow: 1px 1px 10px #00000052;
+.floatformCreate form .SubmitButton:hover {
+  background-color: #424242;
+  transform: translateY(-2px);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3215686275);
 }
 
-#CloseButtonForm{
-    position: absolute;
-    top: 10px;
-    right: 18px;
-    padding: 5px;
-    text-decoration: none;
-    color: #000000;
-    font-size: 18px;
-    font-weight: bold;
+#CloseButtonForm {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  padding: 5px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.LinksLogin{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    padding: 5px;
-    margin-top: 13px;
+.LinksLogin {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  padding: 5px;
+  margin-top: 13px;
 }
 
-.LinksLogin > a{
-    color: #007a56;
-    text-decoration: none;
-    font-size: 15px;
-    width: 100%;
+.LinksLogin > a {
+  color: #007a56;
+  text-decoration: none;
+  font-size: 15px;
+  width: 100%;
 }
 
-.LinksLogin > button{
-    color: #007a56;
-    background: none;
-    border-style: none;
-    text-decoration: none;
-    font-size: 17px !important;
-    width: 100%;
-    cursor: pointer;
+.LinksLogin > button {
+  color: #007a56;
+  background: none;
+  border-style: none;
+  text-decoration: none;
+  font-size: 17px !important;
+  width: 100%;
+  cursor: pointer;
 }
 
-.lembrar{
-    display: inline-block;
-    font-size: 15px;
+.lembrar {
+  display: inline-block;
+  font-size: 15px;
 }
 
-.lembrar > label{
-    font-size: 17px !important;
+.lembrar > label {
+  font-size: 17px !important;
 }
 
-
-#ValSenha{
-    display: none;
-    position: relative;
-    bottom: 20px;
-    padding: 10px;
-    font-size: 13px;
-    border-radius: 13px;
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: #0000002c;
-    box-shadow: 1px 1px 10px #00000005;
+#ValSenha {
+  display: none;
+  position: relative;
+  bottom: 20px;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 13px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: rgba(0, 0, 0, 0.1725490196);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.0196078431);
 }
 
-#ValSenha p{
-    margin: 5px 0px;
+#ValSenha p {
+  margin: 5px 0px;
 }
 
-.CharPassou{
-    color: #007a56;
-    font-weight: bold;
+.CharPassou {
+  color: #007a56;
+  font-weight: bold;
 }
 
-.CharNPassou{
-    color: #7a0029;
-}
+.CharNPassou {
+  color: #7a0029;
+}/*# sourceMappingURL=style.css.map */
