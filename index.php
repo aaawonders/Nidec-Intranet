@@ -177,15 +177,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="MainBody">
     <section class="GridContainer">
         <div class="header">
-            <p>Header</p>
+            <!-- <p>Header</p> -->
             <div class="Slide">
+                <p>Seja Bem-vindo</p><br>
+                <p>a intranet!</p>
             </div>
         </div>
         <div class="sidebar">
-            <p>Sidebar</p>
+            <!-- <p>Sidebar</p> -->
+           <div class="Clima">
+                <div class="weather loading">
+                    <h2 class="city">Cidade</h2>
+                    <h1 class="temp">51°C</h1>
+                    <div class="flex">
+                        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" /> 
+                        <div class="description">Cloudy</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="main">
             <p>Main</p>
+            <div class="test"></div>
         </div>
         <div class="footer">
             <p>© Nidec Corporation 2022</p>

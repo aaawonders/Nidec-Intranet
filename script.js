@@ -97,3 +97,12 @@ MyPassword.onfocus = function() {
         ValTamanho[0].classList.add("CharNPassou");
     }
   }
+
+  let clima = {
+    "apiKey": "10e2581e4657c6cccd117380cd5fd213",
+    fetchWeather: function (){
+        fetch(
+            "https://api.openweathermap.org/data/3.0/onecall?lat=-23.11194826713187&lon=-47.21952674571367&exclude=hourly,daily&appid=10e2581e4657c6cccd117380cd5fd213&units=metric&lang=pt_br"
+        ).then((response) => response.json()).then((data) => console.log(data));
+    }
+  }
