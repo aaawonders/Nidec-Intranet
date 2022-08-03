@@ -1,5 +1,5 @@
 <?php 
-include_once ('./src/MySQLInteract.php');
+include_once ('./src/MySQL/MySQLInteract.php');
 
 if(!isset($_SESSION)){
     session_start();
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             SQLLogin($EmailPass, $SenhaPass, $conn);
 
-            include ('src/login.php');
+            include ('src/Login/login.php');
     } else {
         $ErroLogin = "Email ou Senha incorretos";
     }
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <span class="Line"></span>
             <!-- <li class="BotaoLog3"><a href=""></a></li>
             <span class="Line"></span> -->
-            <li class="BotaoLog4"><a href="./src/Logout.php">Finalizar Sessão</a></li>
+            <li class="BotaoLog4"><a href="./src/login/Logout.php">Finalizar Sessão</a></li>
         </ul>
     </div>
 </div>
@@ -177,20 +177,75 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="MainBody">
     <section class="GridContainer">
         <div class="header">
-            <p>Header</p>
+            <!-- <p>Header</p> -->
             <div class="Slide">
+                <p>Seja Bem-vindo</p><br>
+                <p>a intranet!</p>
             </div>
         </div>
         <div class="sidebar">
-            <p>Sidebar</p>
+            <!-- <p>Sidebar</p> -->
+           <div class="Clima">
+                <div class="weather loading">
+                    <h2 class="city">Cidade</h2>
+                    <h1 class="temp">51°C</h1>
+                    <div class="MinMax">
+                            <p class="TempMin"></p>
+                            <p class="TempMax"></p>
+                        </div>
+                    <div class="flex">
+                        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" /> 
+                        <div class="description">Cloudy</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Aniversario">
+                    <div class="Niver 1">
+                        <h1 class="Nome">Nome</h1>
+                        <div class="flexNiver">
+                            <p class="dataTipo">Aniversário:</p>
+                            <p class="DataNiver">01/01/2000</p>
+                        </div>
+                    </div>
+                    <span class="line"></span>
+                    <div class="Niver 2">2</div>
+                    <span class="line"></span>
+                    <div class="Niver 3">3</div>
+                    <span class="line"></span>
+                    <div class="Niver 4">4</div>
+                    <span class="line"></span>
+                    <div class="Niver 5">5</div>
+            </div>
         </div>
         <div class="main">
             <p>Main</p>
+            <div class="test"></div>
         </div>
         <div class="footer">
             <p>© Nidec Corporation 2022</p>
         </div>
     </section>
+
+    <div class="popup">
+        <div class="WeatherCard">
+            <p class="CloseWeather">X</p>
+            <h2 class="CardCity">Cidade</h2>
+            <h1 class="CardTemp">16°C</h1>
+            <div class="CardFlex">
+                <img class="CardImg" src="https://openweathermap.org/img/wn/04n.png">
+                <p class="CardDesc">Nublado</p>
+            </div>
+            <div class="CardMinMax">
+                <p class="CardMin">Min: 15°C</p>
+                <p class="CardMax">Máx: 20°C</p>
+            </div>
+            <div class="ClimaAdd">
+                <p class="CardUmidade"></p>
+                <p class="CardVel">dsa</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 

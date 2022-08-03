@@ -18,6 +18,7 @@ body {
   background-color: rgb(255, 255, 255);
   justify-content: space-between;
   align-items: center;
+  align-content: center;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -57,7 +58,6 @@ body {
 .topo ul li a {
   display: inline-block;
   width: 100%;
-  height: 100%;
 }
 
 .topo a {
@@ -91,9 +91,10 @@ body {
 }
 
 .popup.ativado {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  min-height: 100%;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.0549019608);
@@ -305,6 +306,7 @@ body {
   border-radius: 10px;
   position: absolute;
   top: -20px;
+  font-size: 15px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4039215686);
   transition: ease-in-out 200ms;
 }
@@ -363,6 +365,7 @@ body {
   text-decoration: none;
   color: rgb(65, 65, 65);
   width: 100%;
+  max-width: 100%;
   padding: 5px;
   cursor: pointer;
 }
@@ -371,6 +374,7 @@ body {
   text-decoration: none;
   color: rgb(49, 49, 49);
   background-color: rgb(255, 231, 163);
+  max-width: 100%;
 }
 
 .LoginDropBox > ul li a {
@@ -381,34 +385,50 @@ body {
 
 .MainBody .header {
   color: white;
-  background-color: #ca0d00;
   grid-area: header;
   display: flex;
   align-items: center;
+  padding: 15px;
 }
 
 .MainBody .sidebar {
-  color: white;
-  background-color: #005eca;
+  color: rgb(0, 0, 0);
+  background-color: rgba(218, 218, 218, 0.8156862745);
   grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2392156863);
+  border-width: 1px;
+  padding: 10px 1px;
 }
 
 .MainBody .main {
   color: white;
-  background-color: #643bd3;
+  background-color: white;
   grid-area: main;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2392156863);
+  border-width: 1px;
+  height: 100vh;
 }
 
 .MainBody .footer {
   color: rgb(0, 0, 0);
-  background-color: #21c500;
+  background-color: rgba(223, 223, 223, 0.7882352941);
   grid-area: footer;
+}
+
+.MainBody .footer > p {
+  color: rgb(138, 138, 138);
 }
 
 .MainBody {
   background-color: rgba(0, 0, 0, 0);
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
 }
 
@@ -420,10 +440,172 @@ body {
 }
 
 .Slide {
-  color: black;
-  background-color: yellow;
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  background-color: rgb(0, 145, 60);
   width: 75%;
-  height: 60vh;
+  height: 400px;
   margin: auto auto;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.Clima {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 90%;
+  height: 140px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1294117647);
+  cursor: pointer;
+}
+
+.Clima .city {
+  font-size: 18px;
+}
+
+.Clima .temp {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.Clima .description {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Clima.flex {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.Clima.description {
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+
+.Clima .weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.Clima .weather.loading:after {
+  visibility: visible;
+  content: "Carregando...";
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.MinMax {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  font-size: 10px;
+  justify-content: space-between;
+}
+
+.WeatherCard {
+  display: none;
+  height: 350px;
+  width: 350px;
+  background-color: rgba(0, 0, 0, 0.6862745098);
+  color: white;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  transition-delay: 5s;
+  transition: 0.2s ease-in-out;
+}
+
+.WeatherCard.active {
+  display: flex;
+  top: 50%;
+}
+
+.CloseWeather {
+  position: relative;
+  top: 0;
+  font-size: 20px;
+  left: 140px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.WeatherCard .CardFlex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.CardMinMax {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.Aniversario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 90%;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1294117647);
+  margin-top: 15px;
+}
+
+span .line {
+  height: 1px;
+  width: 90%;
+  background-color: #000000;
+}
+
+.Niver {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 2px;
+  background-color: rgba(201, 201, 201, 0.089);
+}
+
+.flexNiver {
+  display: flex;
+}
+
+.Niver h1 {
+  font-size: 15px;
+}
+
+.Niver p {
+  font-size: 12px;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */

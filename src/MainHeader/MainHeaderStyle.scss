@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.topo{
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 1px 1px 10px #00000067;
+}
+
+.topo img{
+    width: 100px;
+    cursor: pointer;
+    transition: ease-in 200ms;
+}
+
+.topo img:hover{
+    transform: translateY(-2px);
+    width: 105px;
+}
+
+.topo ul > li{
+    list-style: none;
+    display: inline-block;
+}
+
+.topo li{
+    color: rgb(31, 153, 147);
+    text-align: center;
+    text-decoration: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: ease-in 200ms;
+}
+
+.topo li:hover{
+    color: rgb(21, 100, 96);
+}
+
+.topo ul li a{
+    display: inline-block;
+    width: 100%;
+ }
+
+.topo a{
+    text-decoration: none;
+    color: rgb(31, 153, 147);
+}
+
+.FazerLogin > button img{
+    width: 2.5rem;
+}
+
+.FazerLogin > button img:hover{
+    width: 2.5rem;
+}
+
+#loginButton{
+    opacity: 1;
+    // position: relative;
+    text-decoration: none;
+    color: #1f9993;
+    background: none;
+    border: none;
+    padding: 0px 6px;
+    cursor: pointer;
+}

@@ -9,7 +9,8 @@ global $conn;
 
 $conn = mysqli_connect($dbHostname, $dbUser, $dbSenha, $dbNome); 
 
-require_once ('./index.php');
+// include_once ('./index.php');
+// require_once ('../../index.php');
 
 function SQLadd($CriarID, $CriarNome, $CriarSobrenome, $CriarEmail, $CriarSenha, $conn){
     
