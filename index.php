@@ -201,21 +201,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="Aniversario">
-                    <div class="Niver 1">
-                        <h1 class="Nome">Nome</h1>
-                        <div class="flexNiver">
-                            <p class="dataTipo">Aniversário:</p>
-                            <p class="DataNiver">01/01/2000</p>
-                        </div>
-                    </div>
-                    <span class="line"></span>
-                    <div class="Niver 2">2</div>
-                    <span class="line"></span>
-                    <div class="Niver 3">3</div>
-                    <span class="line"></span>
-                    <div class="Niver 4">4</div>
-                    <span class="line"></span>
-                    <div class="Niver 5">5</div>
+                <h1 class="Titulo">Aniversários</h1>
+                    <?php 
+               
+                    $sql = "SELECT * FROM `perfil`";
+                
+                    $result = mysqli_query($conn, $sql) or die("Falha na execução da query: " . $mysqli->error);
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $nome[] = $row["Nome"];
+                        $sobrenome[] = $row["Sobrenome"];
+                        $niverFor = $row["Aniversário"] ;
+                        $niverFor = date_create($niverFor);
+                        $niver[] = date_format($niverFor, 'd/m');                    
+                    }
+
+                        $niverI = 0;
+                    for ($i = 0; $i < count($nome); $i++) {
+                        $niverI++;
+                    echo "<div class='niver $niverI'> 
+                            <h1 class='Nome'>$nome[$i] $sobrenome[$i]</h1>                       
+                            <div class='flexNiver'>
+                                <p class='dataTipo'>Aniversário:</p>
+                                <p class='DataNiver'>$niver[$i]</p>
+                            </div>
+                        </div>";
+                    echo "<span class='line'></span>";
+                    }
+                    ?>
             </div>
         </div>
         <div class="main">

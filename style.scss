@@ -426,6 +426,7 @@ body{
     border-style: solid;
     border-color: #0000003d;
     border-width: 1px;
+    max-width: 100%;
     padding: 10px 1px;
 }
 
@@ -443,6 +444,7 @@ body{
     color: rgb(0, 0, 0);
     background-color: #dfdfdfc9;
     grid-area: footer;
+    padding: 5px;
 }
 
 .MainBody .footer >p{
@@ -466,7 +468,7 @@ body{
     "sidebar main main main"
     "sidebar main main main"
     "sidebar main main main"
-    "sidebar footer footer footer"
+    "footer footer footer footer"
     ;
 }
 
@@ -616,13 +618,19 @@ body{
     margin-top: 15px;
 }
 
-span .line{
+.line{
     height: 1px;
-    width: 90%;
-    background-color: #000000;
+    width: 80%;
+    background-color: #00000036;
 }
 
-.Niver{
+.Aniversario .Titulo{
+    position: relative;
+    top: 0;
+    color: rgb(0, 116, 90);
+}
+
+.niver{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -630,18 +638,19 @@ span .line{
     width: 100%;
     height: 5rem;
     margin-bottom: 2px;
-    background-color: rgba(201, 201, 201, 0.089);
+    // background-color: rgba(201, 201, 201, 0.089);
 }
 
 .flexNiver{
     display: flex;
 }
 
-.Niver h1{
+.niver h1{
     font-size: 15px;
+    margin-top: 8px;
 }
 
-.Niver p{
+.niver p{
     font-size: 12px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }

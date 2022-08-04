@@ -1,0 +1,63 @@
+body {
+  background: linear-gradient(80deg, rgba(255, 0, 0, 0.808), rgba(228, 91, 0, 0.87));
+}
+
+.NiverCard.ativo {
+  display: flex;
+}
+
+.NiverCard {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.7803921569);
+  color: white;
+  top: 50%;
+  left: 50%;
+  height: 60vh;
+  width: 60vh;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+}
+
+.NiverCard img {
+  width: 30%;
+  border: 3px solid rgb(0, 124, 62);
+  box-shadow: 0px 1px 10px rgba(0, 124, 62, 0.575);
+  transition: 0.5s ease-in-out;
+}
+
+.NiverCard img:hover {
+  width: 35%;
+  transform: translateY(-15px);
+  box-shadow: 0px 5px 30px rgba(0, 124, 62, 0.575);
+}
+
+.NiverCard h1 {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+@-webkit-keyframes fade {}
+
+@keyframes fade {}
+.CloseCard {
+  position: absolute;
+  top: 0;
+  left: 19.5em;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.CloseCard:hover {
+  background-color: rgba(255, 255, 255, 0.329);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.0549019608);
+  transform: translateY(-2px);
+}/*# sourceMappingURL=niverStyle.css.map */
