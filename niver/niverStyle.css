@@ -17,13 +17,13 @@ body {
   top: 50%;
   left: 50%;
   height: 60vh;
-  width: 60vh;
+  min-width: 60vh;
   transform: translate(-50%, -50%);
   border-radius: 15px;
 }
 
 .NiverCard img {
-  width: 30%;
+  width: 115px;
   border: 3px solid rgb(0, 124, 62);
   box-shadow: 0px 1px 10px rgba(0, 124, 62, 0.575);
   transition: 0.5s ease-in-out;
@@ -60,4 +60,21 @@ body {
   background-color: rgba(255, 255, 255, 0.329);
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.0549019608);
   transform: translateY(-2px);
+}
+
+.ListaNiver {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Niverr {
+  padding: 0 25px;
+}
+
+.NiverCard .Line {
+  width: 1px;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.411);
 }/*# sourceMappingURL=niverStyle.css.map */
