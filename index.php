@@ -32,6 +32,7 @@ $SobrenomeLog = $_SESSION['Sobrenome'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/img/favicon.ico" type="image/ico">
     <title>Nidec GA - Início</title>
+    
     <style><?php include ("C:/xampp/htdocs/nidec/style.css"); ?></style>
 </head>
 <body>
