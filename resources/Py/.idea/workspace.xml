@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cff3cde2-252f-4406-92cf-eab448f8ee78" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/Teste/out/production/Teste/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/Teste/out/production/Teste/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/Teste/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/Teste/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/CRUD/crud.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/CRUD/crud.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/CRUD/crudStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/CRUD/crudStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +29,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -75,7 +81,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
+          <line>2</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

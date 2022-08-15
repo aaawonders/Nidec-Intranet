@@ -12,3 +12,37 @@ td {
   border: #000000 solid 1px;
   padding: 5px;
 }/*# sourceMappingURL=crudStyle.css.map */
+
+
+form{
+  display: flex;
+  /* justify-content: space-between; */
+  border: #000000 solid 1px;
+  padding: 5px;
+  width: 100%;
+  max-width: 100%;
+}
+
+form input{
+  background-color: #272727;
+  color: white;
+  border: #d8d8d8 solid 1px;
+}
+
+
+
+
+#CRUD-Button-Submit{
+  /* padding: 5px; */
+  font-size: 15px;
+  border-style: none;
+  background-color: rgb(193, 255, 47);
+  color: hsl(78, 100%, 9%);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+#CRUD-Button-Submit:hover{
+  background-color: hsl(78, 100%, 43%);
+}

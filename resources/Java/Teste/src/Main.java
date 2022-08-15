@@ -14,12 +14,16 @@ public class Main {
         JLabel Label = new JLabel("Teste");
         JTextField txField = new JTextField(10);
         JButton Button = new JButton("OK");
+        Button.setBorderPainted(false);
+        Button.setFocusPainted(false);
+        Button.setContentAreaFilled(false);
 
         Panel.add(Label);
         Panel.add(txField);
         Panel.add(Button);
 
         f.add(Panel);
+        f.setResizable(false);
         f.setVisible(true);
 
 
