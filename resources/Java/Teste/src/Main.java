@@ -12,11 +12,11 @@ public class Main {
         f.setLocation(500,300);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JLabel Label = new JLabel("Teste");
-        JTextField txField = new JTextField(10);
         JButton Button = new JButton("OK");
-        Button.setBorderPainted(false);
+        JTextField txField = new JTextField();
+        /* Button.setBorderPainted(false);
         Button.setFocusPainted(false);
-        Button.setContentAreaFilled(false);
+        Button.setContentAreaFilled(false);*/
 
         Panel.add(Label);
         Panel.add(txField);
@@ -26,10 +26,28 @@ public class Main {
         f.setResizable(false);
         f.setVisible(true);
 
+        Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processaTexto();
+            }
+        });
 
-        String Texto = txField.toString();
 
-        System.out.println(Texto);
 
+        //String Texto = txField.getText();
+
+        //System.out.println(Texto);
+
+    }
+    static void processaTexto() {
+        String texto = txField.getText();
+        StringBuilder textoInverso = new StringBuilder();
+
+        for(int i = texto.length()-1; i >= 0; i --){
+            textoInverso.append(texto.charAt(i));
+        }
+
+        JOptionPane.showMessageDialog(this, "O texto que você digitou na forma inversa: \n "+
+                textoInverso.toString().toUpperCase());
     }
 }
