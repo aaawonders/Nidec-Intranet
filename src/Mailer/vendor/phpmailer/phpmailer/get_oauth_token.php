@@ -70,7 +70,9 @@ if (!isset($_GET['code']) && !isset($_POST['provider'])) {
     exit;
 }
 
-require 'vendor/autoload.php';
+require (__DIR__ . '/../../../vendor/autoload.php');
+
+//require 'vendor/autoload.php';
 
 session_start();
 
