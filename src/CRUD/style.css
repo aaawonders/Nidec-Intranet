@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(27, 27, 27);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.Delete{
+    background-color: rgb(211, 25, 0);
+    text-decoration: none;
+    padding: 8px 12px;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    border-style: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: ease-in-out 0.3ms;
+}
+
+.Delete:hover{
+    background-color: hsl(7, 100%, 60%);
+}
+
+
+table,th,td{
+    text-align: center;
+    border: #ffffff solid 1px;
+    border-collapse:collapse;
+    border-left: none;
+    border-right: none; 
+    padding: 15px;
+}
+
+table{
+    width: 80%;
+    border: none;
+}
+
+
+th{
+    background-color: white;
+    color: black;
+}
+
+td:nth-child(1) {
+    width: 8px;
+}
+
+td:nth-child(6) {
+    width: 15px;
+    border-style: none !important; 
+
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form input{
+    padding: 5px;
+    margin: 0 15px;
+}
+
+form #button{
+    text-decoration: none;
+    border-style: none;
+    padding: 8px 20px;
+    background-color: rgb(6, 192, 0) !important;
+    border-radius: 5px;
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+}
+
+form #button:hover{
+    background-color: rgb(5, 136, 0);
+
+}
+
+#ModalDelete{
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 40px 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+#ModalDelete p{
+    font-size:20px;
+    padding-bottom: 25px;
+}
+
+#ModalDelete .btModal {
+    position: relative;
+    background-color: #0064b6;
+    color: white;
+    font-size: 16px;
+    border-style: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: ease-in-out 0.1ms;
+}
+
+#ModalDelete .btModal:hover {
+    background-color: #005499;
+    top: -1px;
+}
+
+#ModalDelete .btModal.Excluir {
+    background-color: #b61500;
+    transition: ease-in-out 0.2ms;
+}
+
+#ModalDelete .btModal.Excluir:hover {
+    background-color: #8f1100;
+}
