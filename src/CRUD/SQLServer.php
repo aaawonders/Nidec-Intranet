@@ -13,7 +13,7 @@ try{
 
     $Conexao    = Conexao::getConnection();
     $query      = $Conexao->query("SELECT * FROM Login.TabelaCadastros");
-    $produtos   = $query->fetchAll();
+   //  $produtos   = $query->fetchAll();
 
  }catch(Exception $e){
 
