@@ -14,6 +14,15 @@ body{
     font-family: sans-serif;
 }
 
+
+.CrudForm{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .Delete{
     background-color: rgb(211, 25, 0);
     text-decoration: none;
@@ -31,65 +40,46 @@ body{
     background-color: hsl(7, 100%, 60%);
 }
 
-
-table,th,td{
-    text-align: center;
-    border: #ffffff solid 1px;
-    border-collapse:collapse;
-    border-left: none;
-    border-right: none; 
-    padding: 15px;
-}
-
-table{
-    width: 80%;
-    border: none;
-}
-
-
-th{
-    background-color: white;
-    color: black;
-}
-
-td:nth-child(1) {
-    width: 8px;
-}
-
-td:nth-child(6) {
-    width: 15px;
-    border-style: none !important; 
-
+#ButtonDel{
+    border-top: none;
+    border-bottom: none;
+    max-width: 1px;
+    padding: 8px;
 }
 
 #CRUD{
-    background-color: gray;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 15px;
-    align-items: center;
-    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.082);
 }
 
 #CRUD input{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family:'Calibri Light', sans-serif;
     padding: 5px;
     margin: 0 15px;
+    border-radius: 5px;
+    border: rgba(73, 179, 126, 0.76) solid 2px;
 }
+
+#CRUD input::placeholder{
+    color: rgba(255, 255, 255, 0.568);
+}
+
 
 #CRUD #button{
     text-decoration: none;
     border-style: none;
-    padding: 8px 20px;
-    background-color: rgb(6, 192, 0) !important;
-    border-radius: 5px;
-    font-size: 15px;
-    color: black;
+    padding: 2px 12px;
+    background:  linear-gradient(270deg, rgb(0, 175, 120) 0%, rgb(0, 161, 110) 100%) !important;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
     cursor: pointer;
 }
 
 #CRUD #button:hover{
-    background-color: rgb(5, 136, 0);
+    background:  linear-gradient(270deg, hsl(161, 80%, 38%) 0%, hsl(161, 80%, 38%) 100%);
 
 }
 
@@ -142,4 +132,70 @@ td:nth-child(6) {
     margin-bottom: 20px;
     height: 1px;
     width: 100%;
+}
+
+#EmptyTable{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 55px;
+}
+
+
+.CrudForm{
+    display: table;
+    width: 80%;
+}
+
+.t{
+    display: table-row;
+}
+
+.r{
+    display: table-cell;
+    padding: 15px 10px;
+    text-align: center;
+    width: 80em;
+    border-top: #ffffff solid 1px;
+    border-bottom: #ffffff solid 1px;
+}
+
+.t.Head{
+    display: table-row;
+    background-color: rgb(224, 224, 224);
+    color: black;
+    border-bottom: #080808 double 2px;
+    font-weight: bold;
+    padding: 15px 10px;
+    height: 3rem;
+}
+
+.t.Body{
+    display: table-row-group;
+}
+
+.t.Row{
+    display: table-row;
+    border-top: #ffffff solid 1px;
+    border-bottom: #ffffff solid 1px;
+}
+
+.r:nth-child(1){
+    width: 5%;
+}
+
+.r:nth-child(2){
+    width: 10%;
+}
+
+.r:nth-child(3){
+    width: 20%;
+}
+
+.r:nth-child(4){
+    width: 20%;
+}
+
+.r.in{
+    border: none;
 }

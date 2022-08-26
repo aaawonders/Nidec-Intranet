@@ -4,6 +4,13 @@ require ('./SQLServer.php');
 
 $query      = $Conexao->query("SELECT * FROM Login.TabelaCadastros");
 $tabela   = $query->fetchAll();
+$QuantTabela = count($tabela);
+
+if ($QuantTabela > 0) {
+    echo "<style>#EmptyTable{display:none !important;}</style>";
+} else { 
+    echo "<style>#EmptyTable{display:block !important;}</style>";
+}
 
 if (isset($_POST['Nome']) && isset($_POST['Sobrenome'])){
     $PostNome = $_POST['Nome'];
@@ -51,39 +58,54 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' || $_SERVER['REQUEST_METHOD'] == 'POST')
 }?>
 <body>
 
+<div class="CrudForm">
+
+<div class="tBody">
+
 <form action="" method="post" id="CRUD">
-    <input type="text" name="Nome" placeholder="Nome" id="">
-    <input type="text" name="Sobrenome" placeholder="Sobrenome" id="">
-    <input type="email" name="Email" placeholder="Email" id="">
-    <input type="submit" value="Sub" id='button'>
+    <div class="t Row-input">
+        <div class="r in 1"><p></p></div>
+        <div class="r in 2"></div>
+        <div class="r in 3"><input type="text" name="Nome" placeholder="Nome" id=""></div>
+        <div class="r in 4"><input type="text" name="Sobrenome" placeholder="Sobrenome" id=""></div>
+        <div class="r in 5"><input type="email" name="Email" placeholder="Email" id=""></div>
+        <div id='ButtonSub'><input type="submit" value="+" id='button'></div>
+    </div>
 </form>
 
-<table>
-    <tr>
-        <!-- <th></th> -->
-        <th>ID</th>
-        <th>Nome</th>
-        <th>Sobrenome</th>
-        <th>Email</th>
-    </tr>
+<div class="t Head">
+    <div class="r th 1"><p></p></div>
+    <div class="r th 2"><p>ID</p></div>
+    <div class="r th 3"><p>Nome</p></div>
+    <div class="r th 4"><p>Sobrenome</p></div>
+    <div class="r th 5"><p>Email</p></div>
+</div>
 
-    <?php
+<?php
         $i = 0;
 
         foreach ($tabela as $item){
-            echo "<tr>";
-            // echo "<td><input type='checkbox' name='ck_$i' class='checkbox $i'></td>";
-            echo "<td>".$item['ID']."</td>";
-            echo "<td>".$item['Nome']."</td>";
-            echo "<td>".$item['Sobrenome']."</td>";
-            echo "<td>".$item['Email']."</td>";
-            echo "<td id='ButtonDel'><a href='index.php?delete=true&index=$i&id=".$item['ID']."' class='Delete'>X</a></td>";
-            echo "</tr>";
+            echo "<div class='t Row $i'>";
+            echo "<div class='r Col 1'><p></p></div>";
+            echo "<div class='r Col 2'><p>".$item['ID']."</p></div>";
+            echo "<div class='r Col 3'><p>".$item['Nome']."</p></div>";
+            echo "<div class='r Col 4'><p>".$item['Sobrenome']."</p></div>";
+            echo "<div class='r Col 5'><p>".$item['Email']."</p></div>";
+            echo "<div id='ButtonDel'><a href='index.php?delete=true&index=$i&id=".$item['ID']."' class='Delete'>X</a></div>";
+            echo "</div>";
             $i++;
         }
     ?>
 
-</table>
+</div>
+
+<div id="EmptyTable">
+    <p>Sem registros</p>
+</div>
+
+
+
+</div>
 
 <!-- <input type='submit' name='delete $i' value='X' class='Delete $i'> -->
 
