@@ -85,13 +85,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' || $_SERVER['REQUEST_METHOD'] == 'POST')
         $i = 0;
 
         foreach ($tabela as $item){
-            echo "<div class='t Row $i'>";
+            echo "<div class='t Row $i'>"; 
             echo "<div class='r Col 1'><p></p></div>";
             echo "<div class='r Col 2'><p>".$item['ID']."</p></div>";
             echo "<div class='r Col 3'><p>".$item['Nome']."</p></div>";
             echo "<div class='r Col 4'><p>".$item['Sobrenome']."</p></div>";
             echo "<div class='r Col 5'><p>".$item['Email']."</p></div>";
-            echo "<div id='ButtonDel'><a href='index.php?delete=true&index=$i&id=".$item['ID']."' class='Delete'>X</a></div>";
+            echo "<div id='ButtonDel'><a href='index.php?delete=true&index=$i&id=".$item['ID']."' class='Delete id$i'>X</a></div>";
             echo "</div>";
             $i++;
         }
