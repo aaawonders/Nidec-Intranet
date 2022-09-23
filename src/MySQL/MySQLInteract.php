@@ -3,7 +3,7 @@
 $dbHostname = "localhost";
 $dbNome = "Nidec";
 $dbUser = "root";
-$dbSenha = ""; 
+$dbSenha = "y0MH2r%BLr&09aFMXU@fbFLg"; 
 
 global $conn;
 
@@ -26,9 +26,18 @@ function SQLadd($CriarID, $CriarNome, $CriarSobrenome, $CriarEmail, $CriarSenha,
         VALUES ('$CriarID', '$CriarNome', '$CriarSobrenome', '$CriarEmail', '$CriarSenha', '$DataVisita')";
 
         mysqli_query($conn, $sql) or die("Falha na execução da query: " . $mysqli->error);
+
+        session_start();
+
+        $_SESSION['InternID'] = $CriarID;
+        $_SESSION['Nome'] = $CriarNome;
+        $_SESSION['Sobrenome'] = $CriarSobrenome;
+
+        return true;
     } else {
         global $ErroLog;
-        $ErroLog = "Email já existente"; 
+        $ErroLog = "Email já existente";
+        throw new Exception("Email já existente");
     }
 }
 

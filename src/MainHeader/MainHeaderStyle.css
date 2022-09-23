@@ -1,14 +1,4 @@
 @charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  flex-direction: column;
-  background: #ffffff;
-}
 
 .topo {
   font-family: "Poppins", sans-serif;
@@ -154,3 +144,8 @@ body {
   width: 100%;
   height: 10%;
 }/*# sourceMappingURL=MainHeaderStyle.css.map */
+
+
+@media (min-width: 662px){
+  
+}

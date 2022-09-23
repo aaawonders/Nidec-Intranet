@@ -334,17 +334,13 @@ body {
 }
 
 .MainBody .main {
-  color: black;
+  color: white;
   background-color: white;
   grid-area: main;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.2392156863);
   border-width: 1px;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  /* align-items: center; */
 }
 
 .MainBody .footer {
@@ -369,12 +365,7 @@ body {
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto auto auto 0.025fr;
-  grid-template-areas: "header header header header" 
-                        "sidebar main main main" 
-                        "sidebar main main main"
-                        "sidebar main main main"
-                        "sidebar main main main" 
-                        "footer footer footer footer";
+  grid-template-areas: "header header header header" "sidebar main main main" "sidebar main main main" "sidebar main main main" "sidebar main main main" "footer footer footer footer";
 }
 
 .Slide {
@@ -569,13 +560,13 @@ span .line {
 /* Track */
 ::-webkit-scrollbar-track {
   background: #c2c2c2;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: hsl(152deg, 100%, 32%);
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 /* Handle on hover */

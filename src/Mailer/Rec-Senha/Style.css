@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body{
+    background-color: aliceblue;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#Recover{
+    background-color: white;
+    padding: 15px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form input {
+    margin: 8px auto;
+    padding: 5px;
+    font-size: 25px;
+    color: rgb(17, 94, 46);
+    border: 1px solid rgb(3, 70, 25);
+    border-radius: 5px;
+}
+
+form .SubSenha{
+    background-color: rgb(31, 168, 83);
+    color: white;
+    width: 40%;
+    font-size: 20px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Senha1::after{
+    content: '';
+    background-color: black;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+input.Senha2{
+    display: none;
+    position: relative;
+    top: -30px;
+    width: 5px;
+    font-size: 5px;
+    transition: ease-in-out 8s;
+    /* -webkit-transition: ease-in-out 0.8s;
+    -moz-transition: ease-in-out 0.8s; */
+}
+
+input.Senha2.active{
+    display: block;
+    position: relative;
+    top: 0;
+    width: 100%;
+    font-size: 25px;
+    transition: ease-in-out 8s;
+    /* -moz-transition: ease-in-out 0.8s; */
+}

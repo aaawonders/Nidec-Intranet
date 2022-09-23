@@ -1,0 +1,18 @@
+{
+   "News": [
+    {
+    "id": "1",
+    "Title": "Seja Bem-vindo",
+    "Assunto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris odio libero, suscipit ut lacinia eu, porta eu arcu. Maecenas arcu justo, varius ac erat in, sollicitudin semper turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nunc ante, efficitur in massa et, elementum sodales diam. \n Suspendisse pulvinar sit amet ipsum molestie ullamcorper. Sed faucibus molestie risus, et tincidunt quam imperdiet at. In hac habitasse platea dictumst. Sed viverra non purus at vestibulum. Curabitur tempor dignissim odio, vel malesuada orci ullamcorper at. Donec vel lobortis eros, a euismod metus. Sed auctor arcu in tristique faucibus. Proin risus quam, consectetur at aliquet eu, rutrum quis lacus. Integer facilisis erat a dolor semper, id sagittis risus mollis. Phasellus eget dolor semper nibh varius convallis nec quis sem. Donec id elementum felis, sed euismod ante. Nulla facilisi. Aliquam in velit dolor.",
+    "Imagem": "https://images.unsplash.com/photo-1565347878134-064b9185ced8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    "Data" : "12/09/2022"
+    },
+    {
+      "id": "2",
+      "Title": "Outra notícia",
+      "Assunto": "Suspendisse pulvinar sit amet ipsum molestie ullamcorper. Sed faucibus molestie risus, et tincidunt quam imperdiet at. In hac habitasse platea dictumst. Sed viverra non purus at vestibulum. Curabitur tempor dignissim odio, vel malesuada orci ullamcorper at. Donec vel lobortis eros, a euismod metus. Sed auctor arcu in tristique faucibus. Proin risus quam, consectetur at aliquet eu, rutrum quis lacus. Integer facilisis erat a dolor semper, id sagittis risus mollis. Phasellus eget dolor semper nibh varius convallis nec quis sem. Donec id elementum felis, sed euismod ante. Nulla facilisi. Aliquam in velit dolor.",
+      "Imagem": "https://images.unsplash.com/photo-1462206092226-f46025ffe607?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80",
+      "Data" : "14/09/2022"
+   }
+   ]
+}

@@ -44,13 +44,13 @@ echo '<style>'; include(__DIR__. './LFStyle.css'); echo '</style>';
             <a href="" id="CloseButtonForm">X</a>
                 <form action="" method="post">
                     <label for="">Nome</label>
-                    <input type="text" name="CriarNome" id="">
+                    <input type="text" name="CriarNome">
 
                     <label for="">Sobrenome</label>
-                    <input type="text" name="CriarSobrenome" id="">
+                    <input type="text" name="CriarSobrenome">
 
                     <label for="">Email</label>
-                    <input type="email" name="CriarEmail" id="">
+                    <input type="email" name="CriarEmail">
 
                     <label for="">Senha</label>
                     <input type="password" name="CriarSenha" id="PSW">

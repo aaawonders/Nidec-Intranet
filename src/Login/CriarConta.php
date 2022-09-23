@@ -6,27 +6,53 @@ require_once (__DIR__. '/../MySQL/MySQLInteract.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['CriarNome']) && isset($_POST['CriarSobrenome']) && isset($_POST['CriarEmail']) 
     && isset($_POST['CriarSenha'])){
-        if ($_POST['CriarSenha'] == $_POST['CriarSenha2']){
 
-        if (!ValidarSenha($_POST['CriarSenha']) == "Passou"){
+        if (empty($_POST['CriarNome']) || empty($_POST['CriarSobrenome']) || empty($_POST['CriarEmail']) || empty($_POST['CriarSenha']) || empty($_POST['CriarSenha2'])) {
             global $ErroLog;
-            $ErroLog = "Senha fraca";
-        } elseif (ValidarSenha($_POST['CriarSenha']) == "Passou") {
+            $ErroLog = "Todos os campos devem ser preenchidos";
+        } else {
 
-            $CriarNome = $_POST['CriarNome'];
-            $CriarSobrenome = $_POST['CriarSobrenome'];
-            $CriarEmail = $_POST['CriarEmail'];
-            $CriarSenha = password_hash($_POST['CriarSenha'], PASSWORD_DEFAULT);
+            if ($_POST['CriarSenha'] == $_POST['CriarSenha2']){
 
-            SQLadd(1, $CriarNome, $CriarSobrenome, $CriarEmail, $CriarSenha, $conn);
+            // if (ValidarSenha($_POST['CriarSenha']) == "Não Passou"){
+            //     global $ErroLog;
+            //     $ErroLog = "Senha fraca";
+            // } elseif (ValidarSenha($_POST['CriarSenha']) == "Passou") {
+
+                $CriarNome = $_POST['CriarNome'];
+                $CriarSobrenome = $_POST['CriarSobrenome'];
+                $CriarEmail = $_POST['CriarEmail'];
+                $CriarSenha = password_hash($_POST['CriarSenha'], PASSWORD_DEFAULT);
+
+                SQLadd(1, $CriarNome, $CriarSobrenome, $CriarEmail, $CriarSenha, $conn);
+                EmailCriou($CriarEmail, $CriarNome);
+
+                header ('Location: ./src/Login/SessionLogin.php?Criar=true');
+                exit();
+            //}
+        } else {
+            global $ErroLog;
+            $ErroLog = "Senhas não coincidem";
         }
-    } else {
-        global $ErroLog;
-        $ErroLog = "Senhas não coincidem";
     }
 }
 }
 
+function EmailCriou($Email, $Nome) {
+    include (__DIR__ . '/../Mailer/Email_Criado/body.php');
+
+    $User = $Nome;
+    $eemail = $Email;
+    $Para = $Email;
+
+    include (__DIR__ . '/../Mailer/Mail.php');
+
+    if (!$mail->send()){
+        return false;
+    } else {
+        return true;
+    }
+}
 
 function ValidarSenha($Senha){
 

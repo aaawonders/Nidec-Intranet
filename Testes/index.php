@@ -1,29 +1,5 @@
 <?php 
 
-require_once ('./src/Login/login.php');
-require_once ('./src/Login/CriarConta.php');
-
-if(!isset($_SESSION)){
-    session_start();
-}
-
-if (isset($_SESSION['Nome'])){echo "<style>
-.FazerLogin{
-    display:none !important;
-}
-.Perfil{
-    display: flex !important;
-}
-</style>";
-
-$NomeLog = $_SESSION['Nome'];
-$SobrenomeLog = $_SESSION['Sobrenome'];
-
-}
-
-if (isset($_GET['Criar'])){
-    echo "<script>alert('Bem-vindo $NomeLog!\\n \\nSeu Cadastro foi realizado com sucesso');document.location.href='index.php'</script>";
-}
 
 ?>
 
@@ -45,7 +21,7 @@ if (isset($_GET['Criar'])){
 <?php 
 $LogoPath = './assets/img/nidec-ga-logo.png';
 $LoginLogoPath = './assets/svg/person-plus.svg';
-include ('./src/MainHeader/MainHeader.php') 
+include ('../src/MainHeader/MainHeader.php') 
 ?>
 
 </header>
@@ -58,7 +34,6 @@ include ('./src/MainHeader/MainHeader.php')
                 <p>Seja Bem-vindo</p><br>
                 <p>a intranet!</p>
             </div>
-            
         </div>
         <div class="sidebar">
             <!-- <p>Sidebar</p> -->
@@ -123,12 +98,8 @@ include ('./src/MainHeader/MainHeader.php')
             </div>
         </div>
         <div class="main">
-            <!-- <p>Main</p> -->
-            <div class="feed"><?php
-                include ('./src/Feed/Feed.php');
-            ?>
-            </div>
-
+            <p>Main</p>
+            <div class="test"></div>
         </div>
         <div class="footer">
             <p>© Nidec Corporation 2022</p>
