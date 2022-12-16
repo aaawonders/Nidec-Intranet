@@ -17,12 +17,16 @@ $result = mysqli_query($conn, $sql) or die("Falha na execução da query: " . $m
 
 $QuantPass = $result->num_rows;
 
+$NewsExist = false;
+
 if ($QuantPass > 0){
     if ($QuantPass > 1) {
         $Multi = true;
     } elseif ($QuantPass = 1){
         $Multi = false;
     }
+
+    $NewsExist = true;
     
     while ($row = mysqli_fetch_assoc($result)) {
 
@@ -34,10 +38,9 @@ if ($QuantPass > 0){
 
 
         // $DataNot[] =  date_format($NiverDataRaw, 'd')." de ".strftime('%B', strtotime($NiverDataStr));
-}
+    }
 
-} elseif ($QuantPass < 1) {
-
+} elseif ($QuantPass <= 0) {
 }
 
 //Style
@@ -47,62 +50,47 @@ echo '<style>'; echo include(__DIR__.'/./Feed.css'); echo'</style>';
 
 
 <div id="Feed">
-    <!-- <div class="SemFeed">
-        <img src="./imgs/Nothing.svg" alt="">
-        <h1>Sem Resultados!</h1>
-    </div> -->
+    <?php
+    if ($NewsExist == false){
+    echo    "<div class='SemFeed'>";
+    echo    "<img src='/nidec/src/Feed/imgs/Nothing.svg'>";
+    echo    "<h1>Sem Resultados!</h1>";
+    echo    "</div>";
+    }
+    ?>
 
-    <div class="ToolNews">
-    <!-- <nav aria-label="...">
-        <ul class="pagination">
-            <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Anterior</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item">
-            <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-            <a class="page-link" href="#">Próximo</a>
-            </li>
-        </ul>
-    </nav> -->
-    <!-- <button class="btAddNews">+</button> -->
-    <div id="Feed">
+<div class="ToolNews">
+    <?php 
+    // if (isset($_GET['adminNews'])){
+        echo "<button class='btAddNews'>+</button>";
+    // }
+    ?>
+</div>
 
-    <div class="ToolNews">
-    <!-- <button class="btAddNews">+</button> -->
+    <div class="Feed-list">
+
     <?php
         
-    for ($i = 0; $i < count($IDNot); $i++){
-        $ResumeTitulo = substr($AssuntoNot[$i],0, 180,);
-
-
-        // echo "<div class='feed f$i'>";
-        //     echo "<div class='info'>";
-        //         echo "<h1>$TituloNot[$i]</h1>";
-        //         echo "<span id="line"></span>";
-        //         echo "<p>$ResumeTitulo</p>";
-        //     echo "</div>";
-        //     echo "<img src='$FotoNot[$i]'>";
-        // echo "</div>";
+    if ($NewsExist == true){
+        for ($i = 0; $i < count($IDNot); $i++){
+            $ResumeTitulo = substr($AssuntoNot[$i],0, 180,).' ...';
+    
+    
+            echo "<div class='feed f$i'>";
+                echo "<div class='info'>";
+                    echo "<h1>$TituloNot[$i]</h1>";
+                    echo "<span id='line'></span>";
+                    echo "<p>$ResumeTitulo</p>";
+                echo "</div>";
+                echo "<img src='$FotoNot[$i]'>";
+            echo "</div>";
+        }
     }
 
-    ?>
-    <!-- <div class="feed f0">
-        <div class="info">
-            <h1>Seja Bem-vindo</h1>
-            <span id="line"></span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris odio libero, suscipit ut lacinia eu, porta eu arcu. Maecenas arcu justo, varius ac erat in, sollicitudin semper turp ...</p>
-        </div>
-        <img src="https://images.unsplash.com/photo-1565347878134-064b9185ced8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80">
-    </div> -->
-    
-    </div>
+    ?>    
     </div>
     <div class="PopUp">
-        <!-- <div class="AddNews">
+        <div class="AddNews">
             <p class="addNewsClose Close">X</p>
             <form action="" method="get">
 
@@ -118,11 +106,12 @@ echo '<style>'; echo include(__DIR__.'/./Feed.css'); echo'</style>';
                 <input class="btCriarNews" type="submit" value="Criar">
 
             </form>
-        </div> -->
-        <div class="OpenNews">
+        </div>
+    </div>
+        <!-- <div class="OpenNews">
             <p class="NewsClose Close">X</p>
 
-        </div>
+        </div> -->
 </div>
 
 <script type='module'><?php include(__DIR__.'/Feed.js'); ?></script>

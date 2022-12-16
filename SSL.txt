@@ -1,0 +1,82 @@
+Microsoft Windows [Version 10.0.19044.2006]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\a.silva>cd  C:\xampp\apache\bin
+
+C:\xampp\apache\bin>copy server.key server.key.org
+        1 file(s) copied.
+
+C:\xampp\apache\bin>openssl rsa -in server.key.org -out server.key
+Enter pass phrase for server.key.org:
+writing RSA key
+
+C:\xampp\apache\bin>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+Signature ok
+subject=C = BR, ST = SP, L = Indaiatuba, O = Nidec, OU = Admin, CN = Andr\C2\82, emailAddress = andre.silva@nidec-gpm.com
+Getting Private key
+
+C:\xampp\apache\bin>copy server.crt c:\xampp\apache\conf\ssl.crt
+Overwrite c:\xampp\apache\conf\ssl.crt\server.crt? (Yes/No/All):
+Overwrite c:\xampp\apache\conf\ssl.crt\server.crt? (Yes/No/All): Yes
+        1 file(s) copied.
+
+C:\xampp\apache\bin>copy server.key c:\xampp\apache\conf\ssl.key
+Overwrite c:\xampp\apache\conf\ssl.key\server.key? (Yes/No/All): all
+        1 file(s) copied.
+
+C:\xampp\apache\bin>
+
+
+////////////
+
+OpenSSL> genrsa -des3 -out server.key 1024
+Generating RSA private key, 1024 bit long modulus (2 primes)
+..........+++++
+..................................+++++
+e is 65537 (0x010001)
+Enter pass phrase for server.key:
+Verifying - Enter pass phrase for server.key:
+Verify failure
+User interface error
+16584:error:2807106B:UI routines:UI_process:processing error:crypto\ui\ui_lib.c:545:while reading strings
+16584:error:0906906F:PEM routines:PEM_ASN1_write_bio:read key:crypto\pem\pem_lib.c:357:
+error in genrsa
+OpenSSL> xx
+Invalid command 'xx'; type "help" for a list.
+error in xx
+OpenSSL> genrsa -des3 -out server.key 1024
+Generating RSA private key, 1024 bit long modulus (2 primes)
+...............+++++
+.............................+++++
+e is 65537 (0x010001)
+Enter pass phrase for server.key:
+16584:error:28078065:UI routines:UI_set_result_ex:result too small:crypto\ui\ui_lib.c:905:You must type in 4 to 1023 characters
+Enter pass phrase for server.key:
+Verifying - Enter pass phrase for server.key:
+OpenSSL> req -new -key server.key -config "C:\xampp\php\extras\openssl\openssl.cnf" -out server.csr
+Enter pass phrase for server.key:
+Can't load ./.rnd into RNG
+16584:error:2406F079:random number generator:RAND_load_file:Cannot open file:crypto\rand\randfile.c:98:Filename=./.rnd
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:BR
+State or Province Name (full name) [Some-State]:SP
+Locality Name (eg, city) []:Indaiatuba
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Nidec
+Organizational Unit Name (eg, section) []:Admin
+Common Name (eg, YOUR name) []:André
+Email Address []:andre.silva@nidec-gpm.com
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:Silv@0815@01
+An optional company name []:Nidec
+OpenSSL>
+
+
+

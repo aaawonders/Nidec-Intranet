@@ -19,12 +19,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //     $ErroLog = "Senha fraca";
             // } elseif (ValidarSenha($_POST['CriarSenha']) == "Passou") {
 
+                $sql = "SELECT MAX(InternID) FROM `login`";
+
+                $result = mysqli_query($conn, $sql) or die("Falha na execução da query: " . $mysqli->error);
+
+                $CriarID = mysqli_fetch_array($result)['MAX(InternID)'][0] + 1;
+
                 $CriarNome = $_POST['CriarNome'];
                 $CriarSobrenome = $_POST['CriarSobrenome'];
                 $CriarEmail = $_POST['CriarEmail'];
                 $CriarSenha = password_hash($_POST['CriarSenha'], PASSWORD_DEFAULT);
 
-                SQLadd(1, $CriarNome, $CriarSobrenome, $CriarEmail, $CriarSenha, $conn);
+                SQLadd($CriarID, $CriarNome, $CriarSobrenome, $CriarEmail, $CriarSenha, $conn);
                 EmailCriou($CriarEmail, $CriarNome);
 
                 header ('Location: ./src/Login/SessionLogin.php?Criar=true');
@@ -46,12 +52,6 @@ function EmailCriou($Email, $Nome) {
     $Para = $Email;
 
     include (__DIR__ . '/../Mailer/Mail.php');
-
-    if (!$mail->send()){
-        return false;
-    } else {
-        return true;
-    }
 }
 
 function ValidarSenha($Senha){

@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root{
+    --green:rgb(0, 134, 56);
+    --green-clear:rgb(40, 141, 82);
+    --white: rgb(243, 243, 243);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+}
+
+#Sidebar{
+    padding: 15px;
+    background-color: var(--green);
+    color: var(--white);
+    position: absolute;
+    height: 100vh;
+    width: 15%;    
+}
+
+.line{
+    height: 1px;
+    width: 80%;
+    background-color: var(--white);
+}
+
+.Bars{
+    cursor: pointer;
+    padding: 5px;
+}
+
+.Bars svg{
+    width: 25px;
+}
+
+.Side--Top{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+    top: 0;
+    left: 0;
+    padding: 5px 0;
+}
+
+.Main-User{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.User--Block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    transition: ease-in-out 0.2s;
+    position: relative;
+}
+
+
+.div--User{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+.User--Name{
+    margin-left: 5px;
+    font-size: 18px;
+
+}
+
+.User--Circle{
+    border: 1px solid var(--white);
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+
+.user--foto{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: -1.5px;
+    object-fit: contain;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.user--foto img{
+    width: 100%;
+    /* height: 100%; */
+    transform: scale(1.5);
+    transition: 0.5s ease-in-out;
+}
+
+.User--Circle:hover img{
+    transform: scale(1);
+}
+
+.div--User:hover .User--Name{
+    text-decoration: solid;
+}
+
+.Options{
+    display: none;
+    transition: ease-in-out 0.5s;
+}
+
+.Options.active{
+    display: flex;
+}
+
+.Options ul li{
+    list-style: none;
+    padding: 5px;
+    line-height: 22px;
+}
+
+.Options ul li a{
+    text-decoration: none;
+    color: var(--green);
+    transition: ease-in-out 0.2s;
+}
+
+.Options ul li a:hover{
+    /* font-size: 1px; */
+}
+
+
+.User--Block.active{
+    background-color: var(--white);
+    color: var(--green);
+    border-radius: 5px;
+    padding: 5px 0;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+}
+
+.User--Block.active .Bars svg{
+    fill: var(--green);
+}
+
+.div--options{
+    width: 100%;
+}
+
+.options--list{
+    margin: 1px 5px;
+    width: 100%;
+}
+
+.options--list ul li{
+    list-style: none;
+    padding: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+.options--list ul li a{
+    text-decoration: none;
+    color: var(--white);
+    padding: 5px;
+}
+
+.options--list ul li:hover{
+    transform: translateY(-2px);
+}
+
+.link.active{
+    background-color: var(--white);
+}
+
+.link.active::after{
+    content: '';
+    background-color: red;
+    border: 1px solid #FFFFFF;
+    height: 100%;
+}
+
+.link.active a{
+    color: var(--green);
+    width: 100%;
+}
+
+#Content{
+    position: absolute;
+    width: 85%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column; 
+}
+
+.topbar{
+    background-color: var(--green-clear);
+    padding: 20px 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#search--input{
+    background-color: rgba(243, 243, 243, 0.445);
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 20px;
+    border: 1px solid #ffffff9f;
+    padding-left: 40px;
+    width: 800px;
+    color: rgba(9,46,9);
+}
+
+#search--input::placeholder{
+    color: rgba(17, 66, 17, 0.712);
+}
+
+.input--search svg{
+    width: 20px;
+    fill: rgb(9, 46, 9);
+    position: relative;
+    top: 4px;
+    left: 35px;
+}
+
+.suggestions{
+    display: none;
+}
+
+
+.suggestions.active{
+    display: block;
+    position: absolute;
+    width: 750px;
+    background-color: #baebccf8;
+    top: 55px;
+    left: 230px;
+    padding: 15px;
+    border: 1px solid rgb(159, 202, 159);
+    bborder-bottom-left-radius: 15px;
+}
+
+.suggestions .ItemSearch{
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(159, 202, 159);
+}
+
+.suggestions .ItemSearch:hover span{
+    text-decoration: underline;
+}
+
+.lista--pecas{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.Peca{
+    padding: 60px;
+    margin: 15px;
+    background: rgb(0,205,106);
+    /* background: -moz-linear-gradient(90deg, rgba(0,205,106,1) 0%, rgba(0,166,86,0.23573179271708689) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,205,106,1) 0%, rgba(0,166,86,0.23573179271708689) 100%); */
+    background: linear-gradient(90deg, rgba(0,205,106,1) 0%, rgb(0, 166, 86) 100%);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.Peca:hover{
+    transform: translateY(-2px);
+    font-size: 20px;
+    padding: 55px;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541);
+
+}
+
+
+/* Peça individual */
+
+
+.Back{
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.Back svg{
+    width: 30px;
+    margin-right: 15px;
+    fill: white;
+    transition: 0.2s ease-in-out;
+}
+
+.Back:hover svg{
+    transform: translateX(-5px);
+}
+
+.Item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form--prod{
+    display: flex;
+    width: 100%;
+}
+
+.input--prod{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+}
+
+.input--prod input{
+    padding: 0px;
+    font-size: 40px;
+    max-width: 200px;
+    height: 100px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+.input--prod input:disabled{
+    background-color: rgb(238, 238, 238);
+    color: black;
+}
+
+.input--prod.OK{
+    color: green;
+}
+
+.input--prod.OK input{
+    color: green;
+    border-color: rgb(15, 95, 55);
+}
+
+.input--prod.NOK{
+    color: rgb(128, 19, 0);
+}
+
+.input--prod.NOK input{
+    color: rgb(128, 19, 0);
+    border-color: rgb(148, 35, 15);
+}
+
+.Falhas--list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.Falha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+}
+
+.Falha input{
+    appearance: none;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    width: 60px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid #9b2211;
+    color: rgb(182, 28, 7);
+    text-align: center;
+}
+
+.Falha label{
+    color: rgb(182, 28, 7);
+}
+
+.Percentual{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "per-dia"
+    "per-sem";
+    width: 20%;
+}
+
+.Stats{
+    display: flex;
+    width: 70%;
+    height: 260px;
+    border: 1px solid #000000;
+}
+
+.Per--dia{
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    grid-area: per-dia;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Per--sem{
+    border-right: 1px solid #000000;
+    grid-area: per-sem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Per{
+    color: #9b2211;
+}
+
+.Per span{
+    margin: 25px;
+    font-size: 30px
+}
+
+.chart{
+    grid-area: chart;
+    width: 80%;
+    /* max-height: 24px; */
+    /* overflow: hidden ; */
+}
+
+.Datas{
+    display: flex;
+    padding: 5px;
+    margin: 15px;
+    width: 100%;
+}
+
+.periodo--input{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    padding: 15px;
+}
+
+.periodo{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.periodo input{
+    padding: 10px;
+    font-size: 18px;
+}
+
+.labelAte{
+    display: block;
+}
+
+.input--data.ate{
+    display: block;
+}
+
+
+.labelAte.hidden{
+    display: none;
+}
+
+.input--data.ate.hidden{
+    display: none;
+}
+
+.Title{
+    margin: 5px;
+    color: #00804f;
+    font-size: 30px;
+}
+
+.save{
+    margin: 15px;
+    position: absolute;
+    left: 85%;
+}
+
+.salvar{
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    font-size: 20px;
+    background-color: #00804f;
+    color: white;
+    cursor: pointer;
+}
+
+
+.salvar:disabled{
+    background-color: #557e6e;
+    color: rgb(54, 71, 66);
+    cursor:not-allowed;
+}
+
+.salvar:disabled:hover:before{
+    content: '';
+    position: absolute;
+    display: block;
+    border-left: 11px solid transparent; 
+    border-right: 11px solid transparent; 
+    border-bottom: 11px solid #3c8f6f;
+    top: 45px;
+    left: 38px;
+}
+
+.salvar:disabled:hover::after{
+    content: 'Ainda não é possível salvar';
+    position: absolute;
+    display: block;
+    top: 55px;
+    left: -80px;
+    background-color: #3c8f6f;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    width: 160px;
+}
+
+.explanation.hidden{
+    display: none;
+}
+
+.explanation{
+    padding: 15px;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 0px 10px #00000023;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.explanation textarea{
+    resize: none;
+}

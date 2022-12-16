@@ -1,14 +1,6 @@
 
-
 var Feed = document.getElementById('Feed');
 var SFeed = document.getElementsByClassName("SemFeed")[0];
-
-console.log(Feed.childNodes.length);
-console.log(Feed.childNodes);
-
-import NewsJson from './News.json' assert {type: 'json'};
-
-var News = NewsJson.News;
 
 
 
@@ -185,7 +177,7 @@ var closeFeed = document.getElementsByClassName('addNewsClose')[0];
 
 AddNews.addEventListener('click', () => {
     var OpenAdd = document.getElementsByClassName('AddNews')[0];
-
+    alert('teste');
     OpenAdd.classList.add('active');
     popUp.classList.add('active');
 });

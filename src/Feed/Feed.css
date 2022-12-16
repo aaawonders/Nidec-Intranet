@@ -1,6 +1,6 @@
 #Feed{
-    background-color: rgba(175, 204, 184, 0.322);
-    width: 95%;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
     margin-top: 5px;
     border-radius: 22px;
     display: flex;
@@ -39,7 +39,6 @@
     align-items: center;
     border: solid rgba(49, 49, 49, 0.219);
     border-width: 1px 0;
-    height: 152px;
 }
 
 .feed .info{
@@ -163,6 +162,7 @@
     border: none;
     transition: ease-in 0.2s;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 
 .btAddNews:hover{
@@ -178,7 +178,7 @@
 
 
 .btAddNews:hover::after{
-    content: ' Add';
+    content: ' Adicionar';
     transition-delay: 2s;
 }
 

@@ -1,0 +1,15 @@
+RewriteEngine on
+
+
+# Inicio
+RewriteRule home ./index.php
+
+# RH/Cadastros
+RewriteRule rh/cadastros ./src/Admin/RH/cadastros.php
+RewriteRule rh/editarCad ./src/Admin/RH/Editar.php
+RewriteRule rh/cadastrarCad ./src/Admin/RH/cadastrar.php
+RewriteRule rh/apagarCad ./src/Admin/RH/Apagar.php
+
+#Reportar Erro
+RewriteRule ajuda ./src/Report/Report.php
+

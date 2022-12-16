@@ -3,23 +3,35 @@
 require_once ('./src/Login/login.php');
 require_once ('./src/Login/CriarConta.php');
 
-if(!isset($_SESSION)){
+if (!isset($_SESSION)){
     session_start();
 }
+    
 
-if (isset($_SESSION['Nome'])){echo "<style>
-.FazerLogin{
-    display:none !important;
+if (isset($_COOKIE['AcessToken']) && isset($_COOKIE['DToken'])){
+    if (!isset($_SESSION['InternID'])){
+        include (__DIR__."/src/MySQL/ValidateID.php");
+    
+        $_SESSION['InternID'] = Validar($_COOKIE['AcessToken'], $_COOKIE['DToken']);
+        $_SESSION['Nome'] = $_COOKIE['Nome'];
+        $_SESSION['Sobrenome'] = $_COOKIE['Sobrenome'];
+    }
 }
-.Perfil{
-    display: flex !important;
-}
-</style>";
 
-$NomeLog = $_SESSION['Nome'];
-$SobrenomeLog = $_SESSION['Sobrenome'];
-
+if (isset($_SESSION['InternID'])){echo "<style>
+    .FazerLogin{
+        display:none !important;
+    }
+    .Perfil{
+        display: flex !important;
+    }
+    </style>";
+    
+    $NomeLog = $_SESSION['Nome'];
+    $SobrenomeLog = $_SESSION['Sobrenome'];
+    
 }
+
 
 if (isset($_GET['Criar'])){
     echo "<script>alert('Bem-vindo $NomeLog!\\n \\nSeu Cadastro foi realizado com sucesso');document.location.href='index.php'</script>";
@@ -123,8 +135,8 @@ include ('./src/MainHeader/MainHeader.php')
             </div>
         </div>
         <div class="main">
-            <!-- <p>Main</p> -->
-            <div class="feed"><?php
+            <div class="feed">
+            <?php
                 include ('./src/Feed/Feed.php');
             ?>
             </div>

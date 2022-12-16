@@ -76,6 +76,23 @@
   cursor: pointer;
 }
 
+.LoginDropBox {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: -30px;
+  font-size: 15px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4039215686);
+  transition: ease-in-out 200ms;
+}
+
 .Perfil {
   display: none;
   position: relative;
@@ -95,12 +112,14 @@
 }
 
 .Perfil:hover .LoginDropBox {
-  display: flex !important;
-}
-
-.LoginDropBox:hover {
+  display: flex;
   top: 30px;
 }
+
+.Perfil p:hover .LoginDropBox {
+  display: flex;
+}
+
 
 .Line {
   margin: 0 auto;
@@ -118,8 +137,8 @@
   content: "▲";
 }
 
-.LoginDropBox:hover ~ .Perfil > p::after {
-  content: "▲" !important;
+.LoginDropBox:hover ~ .Perfil p::after {
+  content: "▲";
 }
 
 .LoginDropBox > ul li {

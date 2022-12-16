@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produção</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div id="Sidebar">
+
+
+    <div class="Side--Top">
+
+        <div class="User--Block">
+            <div class="Main-User">
+                <div class="div--User">
+
+                    <div class="User--Circle">
+                        <div class="user--foto">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt="">
+                        </div>
+                    </div>
+
+                    <span class="User--Name">Priscila</span>
+                </div>
+
+                <div class="Bars">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+                </div>
+            </div>
+
+            <div class="Options">
+                <ul>
+                    <li><a href="">Perfil</a></li>
+                    <li><a href="">Configurações</a></li>
+                    <li><a href="">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <span class="line"></span>
+
+    <div class="div--options">
+        <div class="options--list">
+            <ul>
+                <li class ='link Pecas active'><a href=""><span>Peças</span></a></li>
+                <li class ='link Producao'><a href=""><span>Produção</span></a></li>
+                <li class ='link Falhas'><a href=""><span>Falhas</span></a></li>
+                <li class ='link Indicador'><a href=""><span>Indicadores</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div id="Content">
+    
+    <div class="topbar">
+        <div class="Back">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M25.4 278.6L2.7 256l22.6-22.6 144-144L192 66.7 237.2 112l-22.6 22.6L125.2 224 416 224l32 0 0 64-32 0-290.7 0 89.4 89.4L237.2 400 192 445.3l-22.6-22.6-144-144z"/></svg>
+            <span>C 001 024</span>
+        </div>
+        <form action="" method="post">
+            <div class="input--search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+                <input type="search" name="search" id="search--input" hasSug="" placeholder="Pesquisar...">
+            </div>
+        </form>
+        <div class="suggestions">
+            <div class="ItemSearch id1">
+                <span>C 001 024</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="Item">
+        <div class="Title">
+            <span class="PecaNome">C 001 024</span>
+        </div>
+        <div class="save">
+            <button class="salvar" disabled>Salvar</button>
+        </div>
+        <div class="Datas">
+                <div class="periodo-ckbox">
+                    <label for="">Período</label>
+                    <input type="checkbox" name="Periodo" id="Periodo">
+                </div>
+                <div class="periodo--input">
+                    <div class="periodo">
+                        <label for="" class="labelDe">Dia:</label>
+                        <input type="date" name="data--de" class="input--data de">
+                    </div>
+    
+                    <div class="periodo">
+                        <label for="" class="labelAte">Até:</label>
+                        <input type="date" name="date-ate" class="input--data ate">
+                    </div>
+                </div>
+        </div>
+        <div class="Stats">
+            <div class="Percentual">
+                <div class="Per Per--dia">
+                    % dia
+                    <span class="Quant Dia"></span>
+                </div>
+                <div class="Per Per--sem">
+                    % sem
+                    <span class="Quant Sem"></span>
+                </div>
+            </div>
+            <div class="chart">
+                <canvas id="ChartParts"></canvas>
+            </div>
+        </div>
+        <div class="input--prod">
+            <form class="form--prod" action="" method="post">
+                <div class="input--prod">
+                    <label for="">Produzido</label>
+                    <input type="number" min="0" disabled name="Prod--total" class="input--prod prod">
+                </div>
+                
+                <div class="input--prod OK">
+                    <label for="">OK</label>
+                    <input type="number" min="0" name="Prod--OK" class="input--prod ok">
+                </div>
+
+                <div class="input--prod NOK">
+                    <label for="">NOK</label>
+                    <input type="number" min="0" disabled name="Prod--NOK" class="input--prod nok">
+                </div>
+            </form>
+        </div>
+
+        <div class="Falhas--list">
+            <div class="Falha F1">
+                <label for="">F1</label>
+                <input type="number" min="0" name="F1" class="Falha--input F1">
+            </div>
+            <div class="Falha F2">
+                <label for="">F2</label>
+                <input type="number" min="0" name="F2" class="Falha--input F2">
+            </div>
+            <div class="Falha F3">
+                <label for="">F3</label>
+                <input type="number" min="0" name="F3" class="Falha--input F3">
+            </div>
+            <div class="Falha F4">
+                <label for="">F4</label>
+                <input type="number" min="0" name="F4" class="Falha--input F4">
+            </div>
+            <div class="Falha F5">
+                <label for="">F5</label>
+                <input type="number" min="0" name="F5" class="Falha--input F5">
+            </div>
+            <div class="Falha F6">
+                <label for="">F6</label>
+                <input type="number" min="0" name="F6" class="Falha--input F6">
+            </div>
+            <div class="Falha F7">
+                <label for="">F7</label>
+                <input type="number" min="0" name="F7" class="Falha--input F7">
+            </div>
+            <div class="Falha F8">
+                <label for="">F8</label>
+                <input type="number" min="0" name="F8" class="Falha--input F8">
+            </div>
+            <div class="Falha F9">
+                <label for="">F9</label>
+                <input type="number" min="0" name="F9" class="Falha--input F9">
+            </div>
+            <div class="Falha F10">
+                <label for="">F10</label>
+                <input type="number" min="0" name="F10" class="Falha--input F10">
+            </div>
+            <div class="Falha F11">
+                <label for="">F11</label>
+                <input type="number" min="0" name="F1" class="Falha--input F1">
+            </div>
+            <div class="Falha F12">
+                <label for="">F12</label>
+                <input type="number" min="0" name="F2" class="Falha--input F2">
+            </div>
+            <div class="Falha F13">
+                <label for="">F13</label>
+                <input type="number" min="0" name="F3" class="Falha--input F3">
+            </div>
+            <div class="Falha F14">
+                <label for="">F14</label>
+                <input type="number" min="0" name="F4" class="Falha--input F4">
+            </div>
+            <div class="Falha F15">
+                <label for="">F15</label>
+                <input type="number" min="0" name="F5" class="Falha--input F5">
+            </div>
+            <div class="Falha F16">
+                <label for="">F16</label>
+                <input type="number" min="0" name="F6" class="Falha--input F6">
+            </div>
+            <div class="Falha F17">
+                <label for="">F17</label>
+                <input type="number" min="0" name="F7" class="Falha--input F7">
+            </div>
+            <div class="Falha F18">
+                <label for="">F18</label>
+                <input type="number" min="0" name="F8" Descricao="true" class="Falha--input F8">
+            </div>
+            <div class="Falha F19">
+                <label for="">F19</label>
+                <input type="number" min="0" name="F9" Descricao="true" class="Falha--input F9">
+            </div>
+
+            <div class="Falha F20">
+                <label for="">F20</label>
+                <input type="number" min="0" name="F10" class="Falha--input F10">
+            </div>
+        </div>
+    </div>
+
+    <div class="explanation hidden">
+        <span>De detalhes sobre a falha</span>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>

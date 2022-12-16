@@ -60,6 +60,11 @@ if (isset($_GET['Email-Para']) && isset($_GET['Corpo'])){
     $mail->addAddress($Para);
     $mail->addCC ('andre.silva@nidec-gpm.com');
     // $mail->addAddress('andre.silva@nidec-gpm.com');
+    
+    if (isset($annex)){
+        $mail ->addAttachment($annex);
+    }
+
 
     $mail ->CharSet = "UTF-8"; 
     $mail->isHTML(true);
@@ -75,10 +80,8 @@ if (isset($_GET['Email-Para']) && isset($_GET['Corpo'])){
     } else {
         echo "Mensagem enviada para $Para";
         
-        echo "<script>alert('Mensagem enviada para $Para');</script>";
+        // echo "<script>alert('Mensagem enviada para $Para');</script>";
 
-        // header('location: Email.php');
-        echo "<script>alert('Mensagem enviada para $Para');</script>";
     }
 
 // } catch (Exception $e) {

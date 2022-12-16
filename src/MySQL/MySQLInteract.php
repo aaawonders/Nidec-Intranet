@@ -1,5 +1,7 @@
 <?php
 
+$MySql = true;
+
 $dbHostname = "localhost";
 $dbNome = "Nidec";
 $dbUser = "root";
@@ -33,11 +35,16 @@ function SQLadd($CriarID, $CriarNome, $CriarSobrenome, $CriarEmail, $CriarSenha,
         $_SESSION['Nome'] = $CriarNome;
         $_SESSION['Sobrenome'] = $CriarSobrenome;
 
+        setcookie('Nome',$CriarNome);
+        setcookie('Sobrenome',$CriarSobrenome);
+
+        
+
         return true;
     } else {
         global $ErroLog;
         $ErroLog = "Email já existente";
-        throw new Exception("Email já existente");
+        // throw new Exception("Email já existente");
     }
 }
 
@@ -57,11 +64,21 @@ function SQLLogin($LoginEmail, $LoginSenha, $conn){
     if ($QuantPass == 1 && password_verify($LoginSenha, $CryptSenha)){
         $LoginPass = mysqli_fetch_assoc(mysqli_query($conn, $sql));
         
+
+        include (__DIR__."/EncryptConn.php");
         session_start();
 
         $_SESSION['InternID'] = $LoginPass['ID'];
         $_SESSION['Nome'] = $LoginPass['Nome'];
         $_SESSION['Sobrenome'] = $LoginPass['Sobrenome'];
+
+        $cookie = KeepAcess($_SESSION['InternID']);
+        
+        setcookie('Nome',$_SESSION['Nome'],time() + 1209600);
+        setcookie('Sobrenome',$_SESSION['Sobrenome'],time() + 1209600);
+        setcookie('AcessToken',$cookie['AcToken'] ,time() + 1209600);
+        setcookie('DToken',$cookie['Date'] ,time() + 1209600);
+
 
         header ('Location: ./src/Login/SessionLogin.php');
         exit();
